@@ -1,15 +1,16 @@
-
+/* Base Styling */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('bg1.jpeg'); 
+    background-image: url('bg1.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: white; 
+    color: white;
 }
 
+/* Overlay if needed */
 .bg-overlay {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -20,43 +21,110 @@ body {
     z-index: -1;
 }
 
+/* Glassmorphism + Gradient Backgrounds */
 .bg-gradient-primary {
-    background: rgba(255, 255, 255, 0.5); 
+    background: rgba(255, 255, 255, 0.2);
     color: black;
     padding: 20px;
     border-radius: 5px;
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
 }
 
+/* Cards with Glass Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+}
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar and Header */
 header .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: white !important;
 }
-
 header h1, header p {
     margin: 0;
 }
 
+/* Section Styling */
 section {
     padding: 60px 20px;
 }
-
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: white;
 }
 
-.icon {
-    margin-bottom: 20px;
+/* Icons */
+.icon i {
     color: #ff7e5f;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.icon i:hover {
+    transform: scale(1.2);
 }
 
+/* Portfolio Images */
+#portfolio img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+#portfolio img:hover {
+    transform: scale(1.05);
+}
+
+/* Team Images */
+#team img {
+    border: 4px solid #fff;
+    transition: transform 0.3s ease;
+}
+#team img:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* Newsletter */
+#newsletter input {
+    border-radius: 25px;
+}
+#newsletter button {
+    border-radius: 25px;
+}
+
+/* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 20px 0;
 }
-
 footer p {
     margin: 0;
+}
+
+/* Fade-in Animation on Scroll */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+section {
+    animation: fadeUp 1s ease-in-out;
 }
